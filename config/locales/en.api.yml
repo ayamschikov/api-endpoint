@@ -1,0 +1,4 @@
+en:
+  api:
+    errors:
+      not_found: Record not found
