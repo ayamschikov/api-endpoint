@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2019_10_31_042518) do
     t.bigint "shop_id", null: false
     t.bigint "book_id", null: false
     t.integer "copies_in_stock"
+    t.index ["book_id", "shop_id"], name: "index_books_shops_on_book_id_and_shop_id"
+    t.index ["shop_id", "book_id"], name: "index_books_shops_on_shop_id_and_book_id"
   end
 
   create_table "publishers", force: :cascade do |t|
