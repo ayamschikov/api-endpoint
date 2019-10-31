@@ -18,8 +18,19 @@ RSpec.describe Publisher, type: :model do
   end
 
   it 'associates with book' do
-    book = create :book
-    @publisher.books << book
+    create :book, publisher: @publisher
+
     expect(@publisher.books.count).to eq(1)
+  end
+
+  it 'returns shop through book' do
+    book = create :book, publisher: @publisher
+    shop = create :shop
+    create :books_shop, book: book, shop: shop
+    shop2 = create :shop
+    create :books_shop, book: book, shop: shop2
+
+    expect(@publisher.shops.first).to eq(shop)
+    expect(@publisher.shops.last).to eq(shop2)
   end
 end
