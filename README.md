@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Test project with two api endpoints and rspec tests.
 
-Things you may want to cover:
+## Project deployment
+```
+$ git clone https://github.com/ayamschikov/api-endpoint.git
+$ docker-compose up -d --build
+```
+You can access to project by `localhost`, make sure that 80 and 5432 ports aren't bind.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Add test data
+Enter the following command inside web container
+```
+$ rails data_migrations:development_data
+```
