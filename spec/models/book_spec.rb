@@ -17,11 +17,6 @@ RSpec.describe Book, type: :model do
     expect(book).to_not be_valid
   end
 
-  it 'is not valid without a copies_in_stock' do
-    book = build(:book, copies_in_stock: nil)
-    expect(book).to_not be_valid
-  end
-
   it 'is not valid without a publisher' do
     book = build(:book, publisher: nil)
     expect(book).to_not be_valid
